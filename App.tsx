@@ -160,17 +160,17 @@ export default function App() {
                             <Text variant="titleMedium"  style={{color:'white'}} className={'mt-6 text-white'}>Number of people</Text>
 
                             <ContentRow>
-                                <CommonInput title={'MS+/MC'} value={state.msAndMedicoverCount}
-                                             onChangeText={(text: string) => dispatch({
-                                                 type: 'msAndMedicoverCount',
-                                                 payload: text
-                                             })}/>
+                                {/*<CommonInput title={'MS+/MC'} value={state.msAndMedicoverCount}*/}
+                                {/*             onChangeText={(text: string) => dispatch({*/}
+                                {/*                 type: 'msAndMedicoverCount',*/}
+                                {/*                 payload: text*/}
+                                {/*             })}/>*/}
 
-                                <CommonInput title={'MS classic'} value={state.msClassicCount}
-                                             onChangeText={(text: string) => dispatch({
-                                                 type: 'msClassicCount',
-                                                 payload: text
-                                             })}/>
+                                {/*<CommonInput title={'MS classic'} value={state.msClassicCount}*/}
+                                {/*             onChangeText={(text: string) => dispatch({*/}
+                                {/*                 type: 'msClassicCount',*/}
+                                {/*                 payload: text*/}
+                                {/*             })}/>*/}
 
                             </ContentRow>
 
@@ -180,20 +180,22 @@ export default function App() {
                                                  type: 'noCardCount',
                                                  payload: text
                                              })}/>
-
+                                
                                 <CommonInput title={'Card usage'} value={state.cardUsages}
                                              onChangeText={(text: string) => dispatch({
                                                  type: 'cardUsages',
                                                  payload: text
                                              })}/>
 
+
                             </ContentRow>
 
                             <View className={'flex flex-row py-6 overflow-hidden'}>
-                                <Image
-                                    resizeMethod={'auto'}
-                                    source={require('@/assets/divider.png')}
-                                />
+                                {/*<Image*/}
+                                {/*    resizeMethod={'resize'}*/}
+                                {/*    style={{width: '100%'}}*/}
+                                {/*    source={require('@/assets/divider.png')}*/}
+                                {/*/>*/}
                             </View>
 
 
@@ -225,7 +227,7 @@ const ResultRow = ({title, value}: { title: string, value: string | number }) =>
 }
 
 const ContentRow: FC<PropsWithChildren> = ({children}) => {
-    return (<View className={'flex flex-row justify-between mt-4'}>
+    return (<View className={'flex flex-row justify-between mt-4 '}>
         {children}
     </View>)
 }
@@ -235,13 +237,14 @@ const CommonInput = ({title, value, onChangeText}: {
     value: any,
     onChangeText: (text: string) => void
 }) => {
-    return <View className={"w-[48%]"}>
+    return <View className={"w-[30%]"}>
         <Title>{title}</Title>
+
         <TextInput
             placeholder={""}
             theme={{roundness: 8, colors: { background:'#241e2f'}}}
             className={"bg-[#241e2f] max-h-[44px] h-[44px] mt-2 rounded-lg p-0"}
-            contentStyle={{color: "#E0E1E4", padding: 0}}
+            contentStyle={{color: "#E0E1E4", padding: 0, maxWidth: '100%'}}
             outlineStyle={{borderColor: "#4D4D9F"}}
             style={{padding: 0, height:44}}
             keyboardType={"numeric"}

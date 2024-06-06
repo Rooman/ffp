@@ -15,6 +15,9 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.rooman.ffpmobile"
     },
+    "experiments": {
+      "baseUrl": "/ffp"
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
